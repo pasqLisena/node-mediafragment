@@ -1,0 +1,32 @@
+{
+    "name": "mediafragment",
+    "version": "0.1.0",
+    "description": "Node version of Thomas Steiner's MediaFragment.js (http://tomayac.com/mediafragments/mediafragments.html)",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/.bin/mocha --reporter spec"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pasqLisena/node-mediafragment"
+    },
+    "keywords": [
+        "media-fragment",
+        "w3c",
+        "html5",
+        "url",
+        "fragment",
+        "video",
+        "audio"
+    ],
+    "author": "Pasquale Lisena <pasq.lisena@gmail.com> (https://github.com/pasqLisena)",
+    "license": "CC-BY-3.0",
+    "bugs": {
+        "url": "https://github.com/pasqLisena/node-mediafragment/issues"
+    },
+    "homepage": "https://github.com/pasqLisena/node-mediafragment",
+    "devDependencies": {
+        "mocha": "^1.21.0",
+        "chai": "^1.9.1"
+    }
+}
