@@ -270,10 +270,10 @@ var dimensions = {
                 return {
                     value: value,
                     unit: 'pixel',
-                    x: x,
-                    y: y,
-                    w: w,
-                    h: h
+                    x: parseInt(x),
+                    y: parseInt(y),
+                    w: parseInt(w),
+                    h: parseInt(h)
                 };
             } else {
                 logWarning('Please ensure that w > 0 and h > 0');
@@ -306,10 +306,10 @@ var dimensions = {
                 return {
                     value: value,
                     unit: 'percent',
-                    x: x,
-                    y: y,
-                    w: w,
-                    h: h
+                    x: parseInt(x),
+                    y: parseInt(y),
+                    w: parseInt(w),
+                    h: parseInt(h)
                 };
             }
             logWarning('Invalid percent selection.');
