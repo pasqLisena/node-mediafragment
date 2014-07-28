@@ -261,19 +261,19 @@ var dimensions = {
         var percentSelection = /^percent\:\d+,\d+,\d+,\d+$/;
 
         var values = value.replace(/(pixel|percent)\:/, '').split(',');
-        var x = values[0];
-        var y = values[1];
-        var w = values[2];
-        var h = values[3];
+        var x = parseInt(values[0]);
+        var y = parseInt(values[1]);
+        var w = parseInt(values[2]);
+        var h = parseInt(values[3]);
         if (pixelCoordinates.test(value)) {
             if (w > 0 && h > 0) {
                 return {
                     value: value,
                     unit: 'pixel',
-                    x: parseInt(x),
-                    y: parseInt(y),
-                    w: parseInt(w),
-                    h: parseInt(h)
+                    x: x,
+                    y: y,
+                    w: w,
+                    h: h
                 };
             } else {
                 logWarning('Please ensure that w > 0 and h > 0');
@@ -300,16 +300,24 @@ var dimensions = {
                     logWarning('Please ensure that 0 <= h <= 100.');
                     return false;
                 }
+                if (x + w > 100) {
+                    logWarning('x + w <= 100. Automatic reduction of w.');
+                    w = 100 - x;
+                }
+                if (y + h > 100) {
+                    logWarning('y + h <= 100. Automatic reduction of h.');
+                    h = 100 - y;
+                }
                 return true;
             });
             if (checkPercentSelection(x, y, w, h)) {
                 return {
                     value: value,
                     unit: 'percent',
-                    x: parseInt(x),
-                    y: parseInt(y),
-                    w: parseInt(w),
-                    h: parseInt(h)
+                    x: x,
+                    y: y,
+                    w: w,
+                    h: h
                 };
             }
             logWarning('Invalid percent selection.');
