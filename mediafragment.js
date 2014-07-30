@@ -97,7 +97,8 @@ var dimensions = {
                     logWarning('Please ensure that minutes <= 59.');
                     return false;
                 }
-                if (seconds >= 60) {
+                if (length > 1 && seconds >= 60) {
+                    // this constraint must not be applied if you specify only seconds
                     logWarning('Please ensure that seconds < 60.');
                     return false;
                 }
