@@ -1,6 +1,6 @@
 {
     "name": "mediafragment",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Node version of Thomas Steiner's MediaFragment.js (http://tomayac.com/mediafragments/mediafragments.html)",
     "main": "index.js",
     "scripts": {
@@ -19,7 +19,7 @@
         "video",
         "audio"
     ],
-    "author": "Pasquale Lisena <pasq.lisena@gmail.com> (https://github.com/pasqLisena)",
+    "author": "Pasquale Lisena <pasquale.lisena@eurecom.fr> (https://github.com/pasqLisena)",
     "license": "CC-BY-3.0",
     "bugs": {
         "url": "https://github.com/pasqLisena/node-mediafragment/issues"

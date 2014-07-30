@@ -25,6 +25,48 @@ if (!Array.prototype.forEach) {
     };
 }
 
+// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+if (!Object.keys) {
+    Object.keys = (function () {
+        'use strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+            dontEnums = [
+                'toString',
+                'toLocaleString',
+                'valueOf',
+                'hasOwnProperty',
+                'isPrototypeOf',
+                'propertyIsEnumerable',
+                'constructor'
+            ],
+            dontEnumsLength = dontEnums.length;
+
+        return function (obj) {
+            if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                throw new TypeError('Object.keys called on non-object');
+            }
+
+            var result = [], prop, i;
+
+            for (prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) {
+                    result.push(prop);
+                }
+            }
+
+            if (hasDontEnumBug) {
+                for (i = 0; i < dontEnumsLength; i++) {
+                    if (hasOwnProperty.call(obj, dontEnums[i])) {
+                        result.push(dontEnums[i]);
+                    }
+                }
+            }
+            return result;
+        };
+    }());
+}
+
 // '&' is the only primary separator for key-value pairs
 var SEPARATOR = '&';
 
@@ -69,9 +111,7 @@ var dimensions = {
                 //    34:56.789
                 //       56.789
                 //       56
-                var hours;
-                var minutes;
-                var seconds;
+                var hours, minutes, seconds;
                 time = time.split(':');
                 var length = time.length;
                 if (length === 3) {
@@ -152,11 +192,8 @@ var dimensions = {
                 // 12:34:56
                 // 12:34:56:78
                 // 12:34:56:78.90
-                var hours;
-                var minutes;
-                var seconds;
-                var frames;
-                var subframes;
+                var hours, minutes, seconds;
+                var frames, subframes;
                 time = time.split(':');
                 var length = time.length;
                 if (length === 3) {
@@ -436,16 +473,6 @@ module.exports = {
             toString: function () {
                 var buildString = function (name, thing) {
                     var s = '\n[' + name + ']:\n';
-                    if (!Object.keys) Object.keys = function (o) {
-                        if (o !== Object(o)) {
-                            throw new TypeError('Object.keys called on non-object');
-                        }
-                        var ret = [], p;
-                        for (p in o) {
-                            if (Object.prototype.hasOwnProperty.call(o, p)) ret.push(p);
-                        }
-                        return ret;
-                    };
                     Object.keys(thing).forEach(function (key) {
                         s += '  * ' + key + ':\n';
                         thing[key].forEach(function (value) {
@@ -459,6 +486,27 @@ module.exports = {
                     return s;
                 };
                 return buildString('Query', queryValues) + buildString('Hash', hashValues);
+            },
+            toUrlString: function () {
+                /*
+                 * Return the fragment part of the url (only with fragment attributes).
+                 */
+                var buildUrlString = function (firstChar, thing) {
+                    var first = true;
+                    var s = '';
+                    Object.keys(thing).forEach(function (key) {
+                        thing[key].forEach(function (value) {
+                            if (first) {
+                                s += firstChar;
+                                first = false;
+                            } else s += '&';
+                            s += key + '=' + value.value;
+                        });
+
+                    });
+                    return s;
+                };
+                return buildUrlString('?', queryValues) + buildUrlString('#', hashValues);
             }
         };
     }
