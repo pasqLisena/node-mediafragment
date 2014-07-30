@@ -1,0 +1,1249 @@
+{"tests": [
+    {
+        "input": "t=,",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3,3",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=7,3",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0,9.97",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "0,9.97",
+                        "unit": "npt",
+                        "start": "0",
+                        "end": "9.97",
+                        "startNormalized": 0,
+                        "endNormalized": 9.97
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,15",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,15",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "15",
+                        "startNormalized": 3,
+                        "endNormalized": 15
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=15,20",
+        "text": "UA seeks to the end of the media resource.",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "15,20",
+                        "unit": "npt",
+                        "start": "15",
+                        "end": "20",
+                        "startNormalized": 15,
+                        "endNormalized": 20
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=15",
+        "text": "UA seeks to the end of the media resource.",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "15",
+                        "unit": "npt",
+                        "start": "15",
+                        "end": "",
+                        "startNormalized": 15,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=,7",
+        "text": "Playback from the beginning to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": ",7",
+                        "unit": "npt",
+                        "start": "",
+                        "end": "7",
+                        "startNormalized": "",
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=,15",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": ",15",
+                        "unit": "npt",
+                        "start": "",
+                        "end": "15",
+                        "startNormalized": "",
+                        "endNormalized": 15
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=smpte:0:00:03,0:00:07",
+        "text": "Playback from the frame marked with timecode 00:00:03 in smpte-30 to the frame marked with timecode 00:00:07 in smpte-30.",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "smpte:0:00:03,0:00:07",
+                        "unit": "smpte",
+                        "start": "0:00:03",
+                        "end": "0:00:07"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=smpte:0:00:03:15.00,0:00:07",
+        "text": "Playback from the frame marked with timecode 00:00:03 in smpte-30 to the frame marked with timecode 00:00:07 in smpte-30",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "smpte:0:00:03:15.00,0:00:07",
+                        "unit": "smpte",
+                        "start": "0:00:03:15.00",
+                        "end": "0:00:07"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=smpte-25:0:00:03,0:00:07",
+        "text": "Playback from the frame marked with timecode 00:00:03 in smpte-25 to the frame marked with timecode 00:00:07 in smpte-25",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "smpte-25:0:00:03,0:00:07",
+                        "unit": "smpte-25",
+                        "start": "0:00:03",
+                        "end": "0:00:07"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=smpte-25:0:00:03,0:00:07",
+        "text": "Playback of the entire media resource.",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "smpte-25:0:00:03,0:00:07",
+                        "unit": "smpte-25",
+                        "start": "0:00:03",
+                        "end": "0:00:07"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=smpte-30:0:00:03,0:00:07",
+        "text": "Playback from the frame marked with timecode 00:00:03 in smpte-30 to the frame marked with timecode 00:00:07 in smpte-30",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "smpte-30:0:00:03,0:00:07",
+                        "unit": "smpte-30",
+                        "start": "0:00:03",
+                        "end": "0:00:07"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=npt:3,7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "npt:3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=clock:2010-10-22T07:33:56Z",
+        "text": "Playback from 3 seconds to the end (creation time = 2010-10-22T07:33:53Z)",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "clock:2010-10-22T07:33:56Z",
+                        "unit": "clock",
+                        "start": "2010-10-22T07:33:56Z",
+                        "end": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=clock:2010-10-22T07:33:56+00:20",
+        "text": "Playback from 3 seconds to the end (creation time = 2010-10-22T07:33:53Z)",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "clock:2010-10-22T07:33:56+00:20",
+                        "unit": "clock",
+                        "start": "2010-10-22T07:33:56+00:20",
+                        "end": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=banana",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3,banana",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=banana,7",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t='3'",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3-7",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3:7",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3,7,9",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t%3D3",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "%74=3",
+        "text": "Playback of from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=%33",
+        "text": "Playback of from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3%2C7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=%6Ept:3",
+        "text": "Playback of from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "npt:3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=npt%3A3",
+        "text": "Playback of from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "npt:3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=-1,3",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "xywh=200,100,200,200",
+        "text": "Cropped playback of the media resource. Cropping details: upper left corner: (200,100) pixels, width: 200, height: 200",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "200,100,200,200",
+                        "unit": "pixel",
+                        "x": "200",
+                        "y": "100",
+                        "w": "200",
+                        "h": "200"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "xywh=pixel:200,100,200,200",
+        "text": "Cropped playback of the media resource. Cropping details: upper left corner: (200,100) pixels, width: 200, height: 200",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "pixel:200,100,200,200",
+                        "unit": "pixel",
+                        "x": "200",
+                        "y": "100",
+                        "w": "200",
+                        "h": "200"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "xywh=percent:0,0,50,50",
+        "text": "Cropped playback of the media resource. Cropping details: upper left corner: (0,0) pixels, width: 640, height: 360",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "percent:0,0,50,50",
+                        "unit": "percent",
+                        "x": "0",
+                        "y": "0",
+                        "w": "50",
+                        "h": "50"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "xywh=200,100,0,0",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "xywh=-200,100,200,200",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "xywh=percent:0,0,150,50",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3&",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "u=12&t=3",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=foo:7&t=npt:3",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "npt:3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "&&=&=tom&jerry=&t=3&t=meow:0#",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=7&t=3",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "track=4",
+        "text": "Playback of track '4' (video only)",
+        "result": {
+            "query": {},
+            "hash": {
+                "track": [
+                    {
+                        "value": "4",
+                        "name": "4"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "track=foo",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "track": [
+                    {
+                        "value": "foo",
+                        "name": "foo"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "T=3,7",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=smpte:00:00:01&t=npt:3",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "npt:3",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "track=n%40m3%20%26%3D",
+        "text": "Playback of track 'n@m3 &='",
+        "result": {
+            "query": {},
+            "hash": {
+                "track": [
+                    {
+                        "value": "n@m3 &=",
+                        "name": "n@m3 &="
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=.",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=.0",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0s",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=,0s",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0s,0s",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=00:00:00s",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=s",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=npt:",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=1e-1",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=00:00:01.1e-1",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3.",
+        "text": "Playback from 3 seconds to the end",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3.",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "",
+                        "startNormalized": 3,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=0:0:0",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:00:60",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:01:60",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:60:00",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:000:000",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=00:00:03,00:00:07",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "00:00:03,00:00:07",
+                        "unit": "npt",
+                        "start": "00:00:03",
+                        "end": "00:00:07",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,00:00:07",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,00:00:07",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "00:00:07",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=00:00.",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "00:00.",
+                        "unit": "npt",
+                        "start": "00:00",
+                        "end": "",
+                        "startNormalized": 0,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=0:00:00.",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "0:00:00.",
+                        "unit": "npt",
+                        "start": "0:00:00",
+                        "end": "",
+                        "startNormalized": 0,
+                        "endNormalized": ""
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=0:00:10e-1",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:00:60.000",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=0:60:00.000",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3,7&t=foo",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "foo&t=3,7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,7&foo",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t=3,7&&",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "&t=3,7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "&&t=3,7",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "&t=3,7&",
+        "text": "Playback from 3 to 7 seconds",
+        "result": {
+            "query": {},
+            "hash": {
+                "t": [
+                    {
+                        "value": "3,7",
+                        "unit": "npt",
+                        "start": "3",
+                        "end": "7",
+                        "startNormalized": 3,
+                        "endNormalized": 7
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "t%3d10",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=10%26",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "t=3,7,",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {}
+        }
+    },
+    {
+        "input": "xywh=200,100,2000,200",
+        "text": "Cropped playback of the media resource. Cropping details: upper left corner: (200,100) pixels, width: 520, height: 200 (because height of the source media is only 720 pixels)",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "200,100,2000,200",
+                        "unit": "pixel",
+                        "x": "200",
+                        "y": "100",
+                        "w": "2000",
+                        "h": "200"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "track=4&track=5",
+        "text": "Playback of tracks '4' and '5'",
+        "result": {
+            "query": {},
+            "hash": {
+                "track": [
+                    {
+                        "value": "4",
+                        "name": "4"
+                    },
+                    {
+                        "value": "5",
+                        "name": "5"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "xywh=20,20,5,5",
+        "text": "Playback of the entire resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "20,20,5,5",
+                        "unit": "pixel",
+                        "x": "20",
+                        "y": "20",
+                        "w": "5",
+                        "h": "5"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "xywh=2000,100,200,200",
+        "text": "Playback of the entire resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "xywh": [
+                    {
+                        "value": "2000,100,200,200",
+                        "unit": "pixel",
+                        "x": "2000",
+                        "y": "100",
+                        "w": "200",
+                        "h": "200"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "id=song1",
+        "text": "Playback of the id fragment 'song1', which corresponds to the temporal fragment #t=3,7",
+        "result": {
+            "query": {},
+            "hash": {
+                "id": [
+                    {
+                        "value": "song1",
+                        "name": "song1"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "input": "id=foo",
+        "text": "Playback of the entire media resource",
+        "result": {
+            "query": {},
+            "hash": {
+                "id": [
+                    {
+                        "value": "foo",
+                        "name": "foo"
+                    }
+                ]
+            }
+        }
+    }
+]}
