@@ -12,8 +12,9 @@ Web using Uniform Resource Identifiers (URIs).
 ## Installation
 
   This library is not yet on npm.
+  
   You can install it from git source with:
-  <pre>git+https://github.com/pasqLisena/node-mediafragment</pre>
+  <pre>npm install git+https://github.com/pasqLisena/node-mediafragment</pre>
 
 ## Usage
 
