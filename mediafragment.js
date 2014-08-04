@@ -339,12 +339,12 @@ var dimensions = {
                     return false;
                 }
                 if (x + w > 100) {
-                    logWarning('x + w <= 100. Automatic reduction of w.');
-                    w = 100 - x;
+                    logWarning('Please ensure that x + w <= 100.');
+                    return false;
                 }
                 if (y + h > 100) {
-                    logWarning('y + h <= 100. Automatic reduction of h.');
-                    h = 100 - y;
+                    logWarning('Please ensure that y + h <= 100.');
+                    return false;
                 }
                 return true;
             });
