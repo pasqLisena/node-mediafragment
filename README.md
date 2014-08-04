@@ -11,7 +11,9 @@ Web using Uniform Resource Identifiers (URIs).
 
 ## Installation
 
-  <pre>npm install mediafragment --save</pre>
+  This library is not yet on npm.
+  You can install it from git source with:
+  <pre>git+https://github.com/pasqLisena/node-mediafragment</pre>
 
 ## Usage
 
@@ -30,5 +32,5 @@ Warning logs are disabled by default. In order to activate them, use
 
 ## Tests
 
-  npm test
+<pre>npm test</pre>
 
