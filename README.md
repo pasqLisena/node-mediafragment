@@ -12,7 +12,7 @@ This module is released under the [Apache License Version 2.0](LICENSE.md)
 
 ## Installation
 
-  This library is not yet on npm.
+  This library is not yet on npm server.
   
   You can install it from git source with:
   <pre>npm install git+https://github.com/pasqLisena/node-mediafragment</pre>
