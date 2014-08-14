@@ -299,10 +299,10 @@ var dimensions = {
         var percentSelection = /^percent\:\d+,\d+,\d+,\d+$/;
 
         var values = value.replace(/(pixel|percent)\:/, '').split(',');
-        var x = parseInt(values[0]);
-        var y = parseInt(values[1]);
-        var w = parseInt(values[2]);
-        var h = parseInt(values[3]);
+        var x = parseInt(values[0],10);
+        var y = parseInt(values[1],10);
+        var w = parseInt(values[2],10);
+        var h = parseInt(values[3],10);
         if (pixelCoordinates.test(value)) {
             if (w > 0 && h > 0) {
                 return {
