@@ -20,7 +20,7 @@
         "audio"
     ],
     "author": "Pasquale Lisena <pasquale.lisena@eurecom.fr> (https://github.com/pasqLisena)",
-    "license": "CC-BY-3.0",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/pasqLisena/node-mediafragment/issues"
     },

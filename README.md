@@ -8,6 +8,7 @@ media-format independent, standard means of addressing media fragments on the
 Web using Uniform Resource Identifiers (URIs).
 (http://www.w3.org/2008/WebVideo/Fragments/)
 
+This module is released under the [Apache License Version 2.0](LICENSE.md)
 
 ## Installation
 
